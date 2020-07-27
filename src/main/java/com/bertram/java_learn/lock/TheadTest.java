@@ -10,5 +10,6 @@ public class TheadTest {
         objectThreadLocal.get();
         objectThreadLocal.set("");
         objectThreadLocal.remove();
+
     }
 }

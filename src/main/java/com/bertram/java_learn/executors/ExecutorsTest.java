@@ -2,9 +2,7 @@ package com.bertram.java_learn.executors;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.*;
 
 /**
  * @author wang
@@ -17,6 +15,9 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class ExecutorsTest {
     public static void main(final String[] args) {
+
+        final ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5, 0, TimeUnit.SECONDS,
+                new ArrayBlockingQueue<>(100), new ThreadPoolExecutor.CallerRunsPolicy());
         final ThreadPoolTaskExecutor executorService = buildThreadPoolTaskExecutor();
         executorService.execute(() -> sayHi("execute"));
         final Future<?> submit = executorService.submit(() -> sayHi("submit"));
@@ -27,7 +28,19 @@ public class ExecutorsTest {
         } catch (final ExecutionException e) {
             e.printStackTrace();
         }
-
+        /**
+         * 四种
+         *
+         */
+        Executors.newSingleThreadScheduledExecutor();
+        //线程数量过大
+        Executors.newCachedThreadPool();
+        //队列堆积数量过大
+        Executors.newFixedThreadPool(2);
+        //maxSize Integer.MAX_VALUE
+        Executors.newScheduledThreadPool(2);
+        //队列堆积数量Integer.MAX_VALUE coreSize 1 maxSize 1
+        Executors.newSingleThreadExecutor();
     }
 
     private static void sayHi(final String name) {
