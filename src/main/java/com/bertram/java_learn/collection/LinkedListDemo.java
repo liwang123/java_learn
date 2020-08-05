@@ -16,6 +16,7 @@ public class LinkedListDemo {
         linkedList.add(1); // 在列表结尾添加元素
         linkedList.add(2, 2); // 在指定位置添加元素
         linkedList.addLast(3); // 添加元素到列表结尾
+        linkedList.addFirst(8);
 
         System.out.println("LinkedList（直接输出的）: " + linkedList);
 

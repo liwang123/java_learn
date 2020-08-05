@@ -3,6 +3,7 @@ package com.bertram.java_learn.executors;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -27,6 +28,8 @@ public class ExecutorsTest {
         } catch (final ExecutionException e) {
             e.printStackTrace();
         }
+
+        Executors.newFixedThreadPool(5);
 
     }
 

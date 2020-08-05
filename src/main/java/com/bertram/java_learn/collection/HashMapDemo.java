@@ -21,6 +21,7 @@ public class HashMapDemo {
         map.put("lao", "老王");
         System.out.println("-------直接输出hashmap:-------");
         System.out.println(map);
+        map.getOrDefault("","");
         /**
          * 遍历HashMap
          */
