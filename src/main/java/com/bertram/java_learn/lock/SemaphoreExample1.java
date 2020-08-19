@@ -24,7 +24,7 @@ public class SemaphoreExample1 {
                 try {
                     semaphore.acquire();// 获取一个许可，所以可运行线程数量为20/1=20
                     test(threadnum);
-                    semaphore.release();// 释放一个许可
+                    semaphore.release();// 释放一个许可[
                 } catch (final InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
