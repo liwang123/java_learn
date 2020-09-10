@@ -28,6 +28,7 @@ public class CyclicBarrierExample3 {
                 try {
                     test(threadNum);
                 } catch (final InterruptedException e) {
+
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 } catch (final BrokenBarrierException e) {
