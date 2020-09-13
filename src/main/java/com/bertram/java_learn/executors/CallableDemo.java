@@ -3,13 +3,14 @@ package com.bertram.java_learn.executors;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Observer;
 import java.util.concurrent.*;
 
 /**
  * @author wang
  * @date 2020/7/24 11:00
  */
-public class CallableDemo {
+public class CallableDemo  {
     private static final int CORE_POOL_SIZE = 5;
     private static final int MAX_POOL_SIZE = 10;
     private static final int QUEUE_CAPACITY = 100;

@@ -1,5 +1,7 @@
 package com.bertram.java_learn.lock;
 
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * @author wang
  * @date 2020/7/28 17:40
@@ -39,4 +41,5 @@ public class DeadLockDemo {
             }
         }, "线程 2").start();
     }
+
 }
