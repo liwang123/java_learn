@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class HashMapDemo {
     public static void main(final String[] args) {
-        final HashMap<String, String> map = new HashMap<>();
+        final HashMap<String, String> map = new HashMap<>(17);
         // 键不能重复，值可以重复
         map.put("san", "张三");
         map.put("si", "李四");
