@@ -2,6 +2,10 @@ package com.bertram.java_learn.算法;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * 两个字符串之和
+ *
+ */
 public class SumTest {
     private static String sum="";
     public static void main(String[] args) {
@@ -10,35 +14,19 @@ public class SumTest {
     }
 
     private static void getSum(String str1,String str2){
-        if(StringUtils.isBlank(str1)){
-            sum= str2;
-        }
-        if(StringUtils.isBlank(str2)){
-            sum= str1;
-        }
-        char[] chars1 = str1.toCharArray();
-        char[] chars2 = str2.toCharArray();
-        //假设len1 长度大于len2
-        int len1=chars1.length-1;
-        int len2=chars2.length-1;
-        int index=0;
-        int count=0;
-        for(int i=len1;i>=0;i--){
-            if(i-len2<0){
-                if(index>0){
-                }
-            }else {
-                int num = chars1[i] + chars2[i]+index;
-                int i2 = num / 10;
-                if(i2==0){
-                    index=0;
-                }else {
-                    int i1 = num % 10;
-                    count=i1;
-                    index=1;
-                }
+            int i=str1.length()-1,j=str2.length()-1,index=0;
+        StringBuilder ans = new StringBuilder();
+        while (i>=0||j>=0||index!=0){
+                int x=i>=0?str1.charAt(i)-'0':0;
+                int y=j>=0?str2.charAt(j)-'0':0;
+                int result=x+y+index;
+                ans.append(result%10);
+                index=result/10;
+                i--;
+                j--;
             }
-        }
-
+        ans.reverse();
     }
 }
+
+
